@@ -1,14 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import './index.css';
+import { HomeContainer } from 'Pages/Home';
 
-function App() {
-  return (
-    <div className="min-h-screen bg-blue-500 text-white flex items-center justify-center">
-      <h1 className="text-4xl">Hello, Tailwind!</h1>
-    </div>
-  );
-}
+const App: React.FC = () => <HomeContainer />;
 
 export default App;

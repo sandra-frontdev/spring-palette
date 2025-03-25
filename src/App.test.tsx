@@ -1,9 +1,17 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+// Mock HomeContainer for testing
+jest.mock('Pages/Home', () => ({
+  HomeContainer: () => <div>Home Container</div>,
+}));
+
+describe('App Component', () => {
+  it('renders the HomeContainer', () => {
+    render(<App />);
+
+    // Check if HomeContainer is rendered
+    const homeContainerElement = screen.getByText(/home container/i);
+    expect(homeContainerElement).toBeInTheDocument();
+  });
 });

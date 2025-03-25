@@ -1,22 +1,20 @@
 import { ActionType } from 'Interfaces';
-import * as type from '../types';
+import * as TYPES from '../types';
+import { Color } from 'Interfaces/ColorsType';
 
-export const getColors = (): ActionType<undefined> => {
-  return {
-    type: type.colors.get.requested,
-  };
-};
+export const getColors = () => ({
+  type: TYPES.colors.get.requested,
+});
 
-export const setColorList = (colors: any[]): ActionType<any[]> => {
-  return {
-    type: type.colors.setColorList.requested,
-    payload: colors,
-  };
-};
+export const saveColor = (
+  colorName: string,
+  colorHex: string
+): ActionType<Omit<Color, 'id'>> => ({
+  type: TYPES.colors.saveColor.requested,
+  payload: { colorName, colorHex },
+});
 
-export const saveColors = (colors: any[]): ActionType<any[]> => {
-  return {
-    type: type.colors.saveColors.requested,
-    payload: colors,
-  };
-};
+export const deleteColor = (colorId: string): ActionType<string> => ({
+  type: TYPES.colors.deleteColor.requested,
+  payload: colorId,
+});

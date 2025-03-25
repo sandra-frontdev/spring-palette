@@ -1,17 +1,13 @@
-import { combineReducers, Reducer, CombinedState } from 'redux';
-import * as type from 'Store/types';
+import { combineReducers } from 'redux';
 import ColorsReducer from './ColorsReducer';
+import { ColorsState } from 'Interfaces';
 
-export type RootState = {
-  colors: any;
-};
+export interface RootState {
+  colors: ColorsState;
+}
 
-const RootReducer: Reducer<CombinedState<RootState>> = (state, action) => {
-  const appReducer = combineReducers<RootState>({
-    colors: ColorsReducer,
-  });
-
-  return appReducer(state, action);
-};
+const RootReducer = combineReducers({
+  colors: ColorsReducer
+});
 
 export default RootReducer;
