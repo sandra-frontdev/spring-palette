@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { Trash2 } from 'lucide-react';
-import { GetColorsResponse } from 'Interfaces/ColorsType';
+import { Color } from 'Interfaces/ColorsType';
 
 interface ColorCardProps {
-  color: GetColorsResponse;
+  color: Color;
   deleteColor: (id: string) => void;
 }
 

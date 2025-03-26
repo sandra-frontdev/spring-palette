@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Funnel, SlidersHorizontal } from 'lucide-react';
+import { Flower, Funnel, SlidersHorizontal } from 'lucide-react';
 
 interface HeaderProps {
   showFilters: boolean;
@@ -11,6 +11,7 @@ export const Header: FC<HeaderProps> = ({ showFilters, setShowFilters }) => {
     <header className="w-full bg-gradient-to-r from-teal-400 via-yellow-400 to-pink-500 py-4 shadow-lg rounded-b-xl">
       <div className="flex flex-col sm:flex-row justify-between items-center px-6 sm:px-8 gap-3 sm:gap-0">
         <div className="flex items-center gap-2">
+          <Flower size={24} className="text-white" />
           <h1 className="text-xl sm:text-3xl font-extrabold text-white tracking-wide leading-tight text-center sm:text-left">
             Spring Palette
           </h1>

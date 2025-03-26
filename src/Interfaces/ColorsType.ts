@@ -1,8 +1,4 @@
-export interface GetColorsResponse {
-  id: string;
-  colorName: string;
-  colorHex: string;
-}
+
 
 export interface Color {
   id: string;
@@ -16,7 +12,7 @@ export interface SaveColorAction {
 }
 
 export interface ColorsState {
-  colors: GetColorsResponse[];
+  colors: Color[];
   loading: boolean;
   error?: string;
 }

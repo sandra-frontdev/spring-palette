@@ -9,13 +9,13 @@ import {
 
 function* getColors(): Generator {
   try {
-    const colorsList: any = yield call(getColorsFromFirebase);
+    const colorsList = yield call(getColorsFromFirebase);
     yield put({
       type: type.colors.get.succeeded,
       payload: colorsList,
     });
   } catch (error) {
-    yield put({ type: type.colors.get.failed, error });
+    yield put({ type: type.colors.get.failed, payload: error });
   }
 }
 
@@ -28,7 +28,7 @@ function* saveColor(action: SaveColorAction) {
       payload: { colorName, colorHex },
     });
   } catch (error) {
-    yield put({ type: type.colors.saveColor.failed, error });
+    yield put({ type: type.colors.saveColor.failed, payload: error });
   }
 }
 
@@ -38,7 +38,7 @@ function* deleteColor(action: { type: string; payload: string }) {
     yield call(deleteColorFromFirebase, colorId);
     yield put({ type: type.colors.deleteColor.succeeded, payload: colorId });
   } catch (error) {
-    yield put({ type: type.colors.deleteColor.failed, error });
+    yield put({ type: type.colors.deleteColor.failed, payload: error });
   }
 }
 
