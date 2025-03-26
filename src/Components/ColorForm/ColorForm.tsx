@@ -78,7 +78,7 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
         <button
           onClick={handleSave}
           disabled={isSaveDisabled}
-          className={`px-10 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto
+          className={`px-7 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto mt-2
             ${isSaveDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-teal-500 to-blue-500 hover:bg-gradient-to-l'}`}
         >
           Save
