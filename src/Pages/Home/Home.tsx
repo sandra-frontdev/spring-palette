@@ -81,7 +81,7 @@ export const Home: FC<HomeProps> = ({
         <div className="bg-gradient-to-r from-blue-50 via-pink-100 to-yellow-100 min-h-screen py-5 px-6 flex-col min-h-screen flex">
             <Header showFilters={showFilters} setShowFilters={setShowFilters} />
             <div className="container mx-auto max-w-4xl mt-10">
-                <ColorForm saveColor={saveColor} colors={colors} deleteColor={deleteColor} />
+                <ColorForm saveColor={saveColor} colors={colors} />
                 <FilterForm
                     filterName={filterName}
                     setFilterName={setFilterName}

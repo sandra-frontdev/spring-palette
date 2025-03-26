@@ -3,11 +3,10 @@ import { ColorInput } from 'Components/ColorInput/ColorInput';
 
 interface ColorFormProps {
   saveColor: (colorName: string, colorHex: string) => void;
-  deleteColor: (colorHex: string) => void;
   colors: { colorName: string; colorHex: string }[];
 }
 
-export const ColorForm: FC<ColorFormProps> = ({ saveColor, deleteColor, colors }) => {
+export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
   const [colorName, setColorName] = useState('');
   const [colorHex, setColorHex] = useState('');
   const [hexError, setHexError] = useState('');
