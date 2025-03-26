@@ -84,12 +84,6 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, deleteColor, colors }
         >
           Save
         </button>
-        <button
-          onClick={() => deleteColor(colorHex)}
-          className="px-6 py-2.5 text-base text-red-600 rounded-lg shadow-md transition-all ml-4 bg-gray-100 hover:bg-red-100"
-        >
-          Delete
-        </button>
       </div>
 
       {hexError && (
