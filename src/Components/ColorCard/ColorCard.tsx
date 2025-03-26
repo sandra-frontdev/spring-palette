@@ -15,14 +15,20 @@ export const ColorCard: FC<ColorCardProps> = ({ color, deleteColor }) => {
 
   const checkEllipsis = (element: HTMLElement | null) => {
     if (element) {
-      return element.scrollWidth > element.clientWidth || element.scrollHeight > element.clientHeight;
+      return (
+        element.scrollWidth > element.clientWidth ||
+        element.scrollHeight > element.clientHeight
+      );
     }
     return false;
   };
 
   useEffect(() => {
     if (colorNameRef.current && colorHexRef.current) {
-      setTitleVisible(checkEllipsis(colorNameRef.current) || checkEllipsis(colorHexRef.current));
+      setTitleVisible(
+        checkEllipsis(colorNameRef.current) ||
+          checkEllipsis(colorHexRef.current)
+      );
     }
   }, [color]);
 

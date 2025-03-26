@@ -33,7 +33,7 @@ export const FilterForm: FC<FilterFormProps> = ({
             label="Filter by name"
             value={filterName}
             onChange={setFilterName}
-            placeholder="Enter filter name"
+            placeholder="Enter name"
           />
         </div>
         <div className="flex flex-col w-1/2">
@@ -41,7 +41,7 @@ export const FilterForm: FC<FilterFormProps> = ({
             label="Filter by HEX"
             value={filterHex}
             onChange={setFilterHex}
-            placeholder="Enter filter HEX"
+            placeholder="Enter HEX"
           />
         </div>
       </div>
