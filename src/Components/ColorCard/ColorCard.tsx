@@ -26,7 +26,7 @@ export const ColorCard: FC<ColorCardProps> = ({ color, deleteColor }) => {
         style={{ backgroundColor: color.colorHex }}
       >
         <p
-          className="text-white font-bold text-xl mt-2 capitalize truncate w-full px-4"
+          className="text-white font-bold text-xl mt-2 capitalize truncate w-full"
           style={{ textShadow: '1px 1px 4px rgba(0, 0, 0, 0.4)' }}
         >
           {color.colorName}
