@@ -22,7 +22,7 @@ export const ColorCard: FC<ColorCardProps> = ({ color, deleteColor }) => {
         </p>
       </div>
       <div
-        className="w-full text-center py-2"
+        className="w-full text-center py-2 pl-4 pr-4"
         style={{ backgroundColor: color.colorHex }}
       >
         <p
