@@ -8,7 +8,7 @@ import { Home } from './Home';
 const mapStateToProps = (state: RootState) => ({
   colors: state.colors.colors,
   loading: state.colors.loading,
-  error: state.colors.error
+  error: state.colors.error,
 });
 
 const mapDispatchToProps = (dispatch: AppDispatch) => ({

@@ -32,7 +32,6 @@ export const ColorCard: FC<ColorCardProps> = ({ color, deleteColor }) => {
           {color.colorName}
         </p>
       </div>
-
       <div className="p-3 text-center">
         <button
           onClick={() => deleteColor(color.id)}

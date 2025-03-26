@@ -38,7 +38,6 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
       );
       return;
     }
-
     setHexError('');
     saveColor(colorName, colorHex);
     setColorName('');
