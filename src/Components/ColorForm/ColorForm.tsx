@@ -75,7 +75,6 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, deleteColor, colors }
           />
         </div>
       </div>
-
       <div className="w-full flex justify-between items-center mt-4">
         <button
           onClick={handleSave}
@@ -85,8 +84,6 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, deleteColor, colors }
         >
           Save
         </button>
-
-        {/* Delete button */}
         <button
           onClick={() => deleteColor(colorHex)}
           className="px-6 py-2.5 text-base text-red-600 rounded-lg shadow-md transition-all ml-4 bg-gray-100 hover:bg-red-100"
