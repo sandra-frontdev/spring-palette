@@ -7,7 +7,7 @@ export interface RootState {
 }
 
 const RootReducer = combineReducers({
-  colors: ColorsReducer
+  colors: ColorsReducer,
 });
 
 export default RootReducer;
