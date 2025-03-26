@@ -55,41 +55,50 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
   };
 
   return (
-    <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full">
-      <div className="w-full flex flex-col sm:flex-row items-center gap-4">
-        <div className="w-full sm:w-1/2">
-          <ColorInput
-            label="Color Name"
-            value={colorName}
-            onChange={setColorName}
-            placeholder="Enter color name"
-          />
+    <>
+      {' '}
+      <div
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') {
+            handleSave();
+          }
+        }}
+        className="bg-white shadow-xl rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full"
+      >
+        <div className="w-full flex flex-col sm:flex-row items-center gap-4">
+          <div className="w-full sm:w-1/2">
+            <ColorInput
+              label="Color Name"
+              value={colorName}
+              onChange={setColorName}
+              placeholder="Enter color name"
+            />
+          </div>
+          <div className="w-full sm:w-1/2">
+            <ColorInput
+              label="HEX Code"
+              value={colorHex}
+              onChange={handleHexChange}
+              placeholder="Enter HEX code"
+            />
+          </div>
         </div>
-        <div className="w-full sm:w-1/2">
-          <ColorInput
-            label="HEX Code"
-            value={colorHex}
-            onChange={handleHexChange}
-            placeholder="Enter HEX code"
-          />
-        </div>
-      </div>
-      <div className="w-full flex justify-between items-center mt-4">
-        <button
-          onClick={handleSave}
-          disabled={isSaveDisabled}
-          className={`px-7 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto mt-2
+        <div className="w-full flex justify-between items-center mt-4">
+          <button
+            onClick={handleSave}
+            disabled={isSaveDisabled}
+            className={`px-7 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto mt-2
             ${isSaveDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-teal-500 to-blue-500 hover:bg-gradient-to-l'}`}
-        >
-          Save
-        </button>
+          >
+            Save
+          </button>
+        </div>
       </div>
-
       {hexError && (
         <p className="mt-2 text-red-600 font-semibold text-center min-h-[24px]">
           {hexError}
         </p>
       )}
-    </div>
+    </>
   );
 };
