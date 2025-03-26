@@ -9,7 +9,7 @@ interface ColorCardProps {
 
 export const ColorCard: FC<ColorCardProps> = ({ color, deleteColor }) => {
   return (
-    <div className="flex flex-col items-center bg-white shadow-xl rounded-xl overflow-hidden transform transition-all hover:scale-105 duration-300 h-40">
+    <div className="flex flex-col items-center bg-white shadow-xl rounded-xl overflow-hidden transform transition-all hover:scale-105 duration-300">
       <div
         className="w-full h-24 relative flex items-center justify-center"
         style={{ backgroundColor: color.colorHex }}

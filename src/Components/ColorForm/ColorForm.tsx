@@ -3,10 +3,11 @@ import { ColorInput } from 'Components/ColorInput/ColorInput';
 
 interface ColorFormProps {
   saveColor: (colorName: string, colorHex: string) => void;
+  deleteColor: (colorHex: string) => void;
   colors: { colorName: string; colorHex: string }[];
 }
 
-export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
+export const ColorForm: FC<ColorFormProps> = ({ saveColor, deleteColor, colors }) => {
   const [colorName, setColorName] = useState('');
   const [colorHex, setColorHex] = useState('');
   const [hexError, setHexError] = useState('');
@@ -55,9 +56,9 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
   };
 
   return (
-    <>
-      <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full">
-        <div className="w-full">
+    <div className="bg-white shadow-xl rounded-xl p-6 sm:p-8 flex flex-col sm:flex-row gap-4 sm:gap-6 items-center w-full">
+      <div className="w-full flex flex-col sm:flex-row items-center gap-4">
+        <div className="w-full sm:w-1/2">
           <ColorInput
             label="Color Name"
             value={colorName}
@@ -65,7 +66,7 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
             placeholder="Enter color name"
           />
         </div>
-        <div className="w-full">
+        <div className="w-full sm:w-1/2">
           <ColorInput
             label="HEX Code"
             value={colorHex}
@@ -73,20 +74,32 @@ export const ColorForm: FC<ColorFormProps> = ({ saveColor, colors }) => {
             placeholder="Enter HEX code"
           />
         </div>
+      </div>
+
+      <div className="w-full flex justify-between items-center mt-4">
         <button
           onClick={handleSave}
           disabled={isSaveDisabled}
-          className={`px-10 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto mt-5
+          className={`px-10 py-2.5 text-base text-white rounded-lg shadow-md transition-all w-auto
             ${isSaveDisabled ? 'bg-gray-400 cursor-not-allowed' : 'bg-gradient-to-r from-teal-500 to-blue-500 hover:bg-gradient-to-l'}`}
         >
           Save
         </button>
+
+        {/* Delete button */}
+        <button
+          onClick={() => deleteColor(colorHex)}
+          className="px-6 py-2.5 text-base text-red-600 rounded-lg shadow-md transition-all ml-4 bg-gray-100 hover:bg-red-100"
+        >
+          Delete
+        </button>
       </div>
+
       {hexError && (
         <p className="mt-2 text-red-600 font-semibold text-center min-h-[24px]">
           {hexError}
         </p>
       )}
-    </>
+    </div>
   );
 };
