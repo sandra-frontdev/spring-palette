@@ -11,7 +11,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. Clone the repository:
    ```sh
    git clone https://github.com/sandra-frontdev/spring-palette
-   cd color-manager
+   cd sping-palette
    ```
 2. Install dependencies:
    ```sh
